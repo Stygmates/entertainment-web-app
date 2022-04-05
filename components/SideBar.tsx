@@ -63,15 +63,15 @@ const SideBar = () => (
           margin: 1rem;
         }
 
+        .sidebar-label:hover {
+          filter: brightness(150%);
+        }
+
         .sidebar-radiogroup [type="radio"] {
           position: absolute;
           opacity: 0;
           width: 0;
           height: 0;
-        }
-
-        .sidebar-radiogroup:hover {
-          filter: brightness(150%);
         }
 
         .avatar-icon button {
