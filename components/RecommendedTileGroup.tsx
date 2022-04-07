@@ -14,13 +14,13 @@ function RecommendedTileGroup(props: { tilegroup: TileGroup }) {
       {props.tilegroup.TileGroup.map((tile, index) => {
         return <RecommendedTile key={index} tile={tile} />;
       })}
-      <style jsx>
-        {`
-          .recommended-tile-group {
-            width: 1240px;
-          }
-        `}
-      </style>
+      <style jsx>{`
+        .recommended-tile-group {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      `}</style>
     </div>
   );
 }

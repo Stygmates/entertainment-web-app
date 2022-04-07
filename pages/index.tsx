@@ -12,7 +12,7 @@ const MainPage: NextPage = () => {
   return (
     <div className="index-page">
       <SideBar />
-      <div>
+      <div className="content">
         <SearchBar />
         <TrendingTileGroup tilegroup={tileGroup} />
         <RecommendedTileGroup tilegroup={tileGroup} />
@@ -20,6 +20,14 @@ const MainPage: NextPage = () => {
       <style jsx>{`
         .index-page {
           display: flex;
+        }
+        .content {
+          width: 90%;
+        }
+        @media only screen and (max-width: 2048px) {
+          .index-page {
+            flex-direction: column;
+          }
         }
       `}</style>
     </div>

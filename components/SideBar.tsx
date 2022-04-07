@@ -56,7 +56,6 @@ const SideBar = () => (
         .sidebar-radiogroup {
           display: flex;
           flex-direction: column;
-          height: 800px;
         }
 
         .sidebar-label {
@@ -77,6 +76,17 @@ const SideBar = () => (
         .avatar-icon button {
           background-color: transparent;
           border: none;
+        }
+
+        @media only screen and (max-width: 2048px) {
+          .sidebar {
+            height: 96px;
+            width: 960px;
+            flex-direction: row;
+          }
+          .sidebar-radiogroup {
+            flex-direction: row;
+          }
         }
       `}
     </style>

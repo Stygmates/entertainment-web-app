@@ -28,7 +28,6 @@ function TrendingTileGroup(props: { tilegroup: TileGroup }) {
           }
           .trending-tile-group {
             height: 295px;
-            width: 1200px;
             overflow: hidden;
             white-space: nowrap;
           }
