@@ -9,7 +9,6 @@ function TrendingTileGroup({ tiles }: TileGroup) {
     <div className="trending-group">
       <div className="trending-tile-group-title heading-l">Trending</div>
       <div ref={scrollRef} className="trending-tile-group">
-        {}
         {tiles.map((tile: Tile, index: number) => {
           if (tile.isTrending) {
             return (
