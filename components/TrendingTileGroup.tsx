@@ -1,19 +1,16 @@
 import { ReactChild, ReactFragment, ReactPortal } from "react";
 import TrendingTile from "./TrendingTile";
-import { Tile } from "./Tile";
+import { Tile, TileGroup } from "./Tile";
 import { useHorizontalScroll } from "./helpers/HorizontalScroll";
 
-interface TileGroup {
-  TileGroup: Tile[];
-}
-
-function TrendingTileGroup(props: { tilegroup: TileGroup }) {
+function TrendingTileGroup({ tiles }: TileGroup) {
   const scrollRef = useHorizontalScroll();
   return (
     <div className="trending-group">
       <div className="trending-tile-group-title heading-l">Trending</div>
       <div ref={scrollRef} className="trending-tile-group">
-        {props.tilegroup.TileGroup.map((tile, index) => {
+        {}
+        {tiles.map((tile: Tile, index: number) => {
           if (tile.isTrending) {
             return (
               <TrendingTile className="trending-tile" key={index} tile={tile} />

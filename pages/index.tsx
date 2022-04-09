@@ -8,14 +8,13 @@ import data from "../assets/data.json";
 
 const MainPage: NextPage = () => {
   let tiles: Tile[] = data;
-  let tileGroup: TileGroup = { TileGroup: tiles };
   return (
     <div className="index-page">
       <SideBar />
       <div className="content">
         <SearchBar />
-        <TrendingTileGroup tilegroup={tileGroup} />
-        <RecommendedTileGroup tilegroup={tileGroup} />
+        <TrendingTileGroup tiles={tiles} />
+        <RecommendedTileGroup tiles={tiles} />
       </div>
       <style jsx>{`
         .index-page {

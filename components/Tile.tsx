@@ -12,5 +12,5 @@ export interface Tile {
 }
 
 export interface TileGroup {
-  TileGroup: Tile[];
+  tiles: Tile[];
 }
