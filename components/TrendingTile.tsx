@@ -5,7 +5,7 @@ import movieIcon from "../assets/icon-category-movie.svg";
 import tvIcon from "../assets/icon-category-tv.svg";
 import { Tile } from "./Tile";
 
-function TrendingTile({ tile }: { tile: Tile }) {
+function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
   let videoType;
   if (tile.category === "Movie") {
     videoType = (

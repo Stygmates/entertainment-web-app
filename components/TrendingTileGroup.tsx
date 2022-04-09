@@ -1,35 +1,41 @@
-import { ReactChild, ReactFragment, ReactPortal } from "react";
-import TrendingTile from "./TrendingTile";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import usePreventBodyScroll from "./helpers/useProventBodyScroll";
 import { Tile, TileGroup } from "./Tile";
-import { useHorizontalScroll } from "./helpers/HorizontalScroll";
+import TrendingTile from "./TrendingTile";
 
-function TrendingTileGroup({ tiles }: TileGroup) {
-  const scrollRef = useHorizontalScroll();
+type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
+
+export default function TrendingTileGroup({ tiles }: TileGroup) {
+  const { disableScroll, enableScroll } = usePreventBodyScroll();
+  let trendingTiles = tiles.filter((tile) => tile.isTrending);
   return (
-    <div className="trending-group">
-      <div className="trending-tile-group-title heading-l">Trending</div>
-      <div ref={scrollRef} className="trending-tile-group">
-        {tiles.map((tile: Tile, index: number) => {
-          if (tile.isTrending) {
-            return (
-              <TrendingTile className="trending-tile" key={index} tile={tile} />
-            );
-          }
+    <div onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
+      <ScrollMenu
+        onWheel={onWheel}
+        transitionBehavior="smooth"
+        transitionDuration={1500}
+      >
+        {trendingTiles.map(function (tile: Tile, index: number) {
+          return (
+            <TrendingTile key={index} tile={tile} itemId={index.toString()} />
+          );
         })}
-      </div>
-      <style jsx>
-        {`
-          .trending-group {
-            margin: 20px;
-          }
-          .trending-tile-group {
-            height: 295px;
-            overflow: hidden;
-            white-space: nowrap;
-          }
-        `}
-      </style>
+      </ScrollMenu>
     </div>
   );
 }
-export default TrendingTileGroup;
+
+function onWheel(apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void {
+  const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
+
+  if (isThouchpad) {
+    ev.stopPropagation();
+    return;
+  }
+
+  if (ev.deltaY < 0) {
+    apiObj.scrollNext();
+  } else if (ev.deltaY > 0) {
+    apiObj.scrollPrev();
+  }
+}
