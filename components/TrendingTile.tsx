@@ -3,17 +3,21 @@ import BookmarkButton from "./BookmarkButton";
 import PlayButton from "./PlayButton";
 import movieIcon from "../assets/icon-category-movie.svg";
 import tvIcon from "../assets/icon-category-tv.svg";
+import { Tile } from "./Tile";
 
-function TrendingTile(props: any) {
+function TrendingTile({ tile }: { tile: Tile }) {
   let videoType;
-  if (props.tile.category === "Movie") {
+  if (tile.category === "Movie") {
     videoType = (
       <Image src={movieIcon} alt="Categorie" width={12} height={12} />
     );
-  } else if (props.tile.category === "TV Series") {
+  } else if (tile.category === "TV Series") {
     videoType = <Image src={tvIcon} alt="Categorie" width={12} height={12} />;
   }
-  let thumbnailSource = props.tile.thumbnail.trending.large.substring(1);
+
+  let thumbnailSource = tile.thumbnail.trending
+    ? tile.thumbnail.trending.large.substring(1)
+    : "";
   return (
     <div className="trending-tile">
       <div className="tile-thumbnail">
@@ -28,14 +32,13 @@ function TrendingTile(props: any) {
         <PlayButton />
       </div>
       <div className="bookmark-button">
-        <BookmarkButton bookmarked={props.tile.isBookmarked} />
+        <BookmarkButton bookmarked={tile.isBookmarked} />
       </div>
       <div id="tile-information">
         <div id="tile-description" className="body-m">
-          {props.tile.year} • {videoType} {props.tile.category} •{" "}
-          {props.tile.rating}
+          {tile.year} • {videoType} {tile.category} • {tile.rating}
         </div>
-        <div className="heading-s">{props.tile.title}</div>
+        <div className="heading-s">{tile.title}</div>
       </div>
       <style jsx>{`
         .trending-tile {
