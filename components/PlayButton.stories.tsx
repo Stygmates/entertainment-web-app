@@ -10,6 +10,6 @@ const Template: ComponentStory<typeof PlayButton> = (args) => (
   <PlayButton {...args} />
 );
 
-export const Bookmarked = Template.bind({});
+export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Bookmarked.args = {};
+Primary.args = {};
