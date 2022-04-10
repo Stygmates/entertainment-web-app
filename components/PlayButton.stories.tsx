@@ -12,12 +12,4 @@ const Template: ComponentStory<typeof PlayButton> = (args) => (
 
 export const Bookmarked = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Bookmarked.args = {
-  bookmarked: true,
-};
-
-export const NotBookmarked = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-NotBookmarked.args = {
-  bookmarked: false,
-};
+Bookmarked.args = {};

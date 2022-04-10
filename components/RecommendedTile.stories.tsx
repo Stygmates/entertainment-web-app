@@ -1,4 +1,4 @@
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import BeyondEarth from "../public/thumbnails/beyond-earth/trending/large.jpg";
 import RecommendedTile from "./RecommendedTile";
 import { Tile } from "./Tile";
@@ -8,8 +8,13 @@ export default {
   component: RecommendedTile,
 } as ComponentMeta<typeof RecommendedTile>;
 
-export const Primary = () => {
-  let tile: Tile = {
+const Template: ComponentStory<typeof RecommendedTile> = (args) => (
+  <RecommendedTile {...args} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {
+  tile: {
     title: "Beyond Earth",
     thumbnail: {
       trending: {
@@ -27,6 +32,5 @@ export const Primary = () => {
     rating: "PG",
     isBookmarked: false,
     isTrending: true,
-  };
-  return <RecommendedTile tile={tile} />;
+  },
 };

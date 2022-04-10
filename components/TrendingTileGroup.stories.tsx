@@ -1,7 +1,6 @@
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import TrendingTileGroup from "./TrendingTileGroup";
-import { Tile } from "./Tile";
 import data from "../assets/data.json";
 
 export default {
@@ -9,8 +8,11 @@ export default {
   component: TrendingTileGroup,
 } as ComponentMeta<typeof TrendingTileGroup>;
 
-export const Primary = () => {
-  let tiles: Tile[] = data;
+const Template: ComponentStory<typeof TrendingTileGroup> = (args) => (
+  <TrendingTileGroup {...args} />
+);
 
-  return <TrendingTileGroup tiles={tiles} />;
+export const Primary = Template.bind({});
+Primary.args = {
+  tiles: data,
 };

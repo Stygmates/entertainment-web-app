@@ -1,33 +1,34 @@
-import { ComponentMeta } from "@storybook/react";
-
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import TrendingTile from "./TrendingTile";
-import BeyondEarth from "../public/thumbnails/beyond-earth/trending/large.jpg";
-import { Tile } from "./Tile";
 
 export default {
   title: "Home/TrendingTile",
   component: TrendingTile,
 } as ComponentMeta<typeof TrendingTile>;
 
-export const Primary = () => {
-  let tile: Tile = {
-    title: "Bottom Gear",
+const Template: ComponentStory<typeof TrendingTile> = (args) => (
+  <TrendingTile {...args} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {
+  tile: {
+    title: "Beyond Earth",
     thumbnail: {
       trending: {
-        small: "./assets/thumbnails/bottom-gear/trending/small.jpg",
-        large: "./assets/thumbnails/bottom-gear/trending/large.jpg",
+        small: "./assets/thumbnails/beyond-earth/trending/small.jpg",
+        large: "./assets/thumbnails/beyond-earth/trending/large.jpg",
       },
       regular: {
-        small: "./assets/thumbnails/bottom-gear/regular/small.jpg",
-        medium: "./assets/thumbnails/bottom-gear/regular/medium.jpg",
-        large: "./assets/thumbnails/bottom-gear/regular/large.jpg",
+        small: "./assets/thumbnails/beyond-earth/regular/small.jpg",
+        medium: "./assets/thumbnails/beyond-earth/regular/medium.jpg",
+        large: "./assets/thumbnails/beyond-earth/regular/large.jpg",
       },
     },
-    year: 2021,
+    year: 2019,
     category: "Movie",
     rating: "PG",
     isBookmarked: false,
     isTrending: true,
-  };
-  return <TrendingTile tile={tile} itemId={"0"}/>;
+  },
 };
