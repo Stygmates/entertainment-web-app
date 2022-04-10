@@ -29,5 +29,5 @@ export const Primary = () => {
     isBookmarked: false,
     isTrending: true,
   };
-  return <TrendingTile tile={tile} />;
+  return <TrendingTile tile={tile} itemId={"0"}/>;
 };
