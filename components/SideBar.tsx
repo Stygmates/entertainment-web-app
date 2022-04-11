@@ -57,6 +57,9 @@ const SideBar = () => (
         @media only screen and (max-width: 375px) {
           .sidebar {
             height: 56px;
+            width: 100vw;
+            border-radius: 0px;
+            margin-top: 0px;
           }
         }
       `}
