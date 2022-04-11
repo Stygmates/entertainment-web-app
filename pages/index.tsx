@@ -23,9 +23,10 @@ const MainPage: NextPage = () => {
         .content {
           width: 90%;
         }
-        @media only screen and (max-width: 2048px) {
+        @media only screen and (max-width: 768px) {
           .index-page {
             flex-direction: column;
+            align-items: center;
           }
         }
       `}</style>
