@@ -23,7 +23,6 @@ function SearchBar(props: any) {
             border: none;
             background-color: transparent;
             color: white;
-            width: 350px;
             height: 30px;
             vertical-align: top;
           }
@@ -34,6 +33,11 @@ function SearchBar(props: any) {
           .searchbar {
             height: 32px;
             margin-top: 64px;
+          }
+          @media only screen and (max-width: 768px) {
+            .searchbar {
+              margin-top: 0px;
+            }
           }
         `}
       </style>
