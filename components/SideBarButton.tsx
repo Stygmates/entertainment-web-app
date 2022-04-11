@@ -19,8 +19,8 @@ export default function SideBarButton({
           height: 0;
         }
         .sidebar-label {
-          width: 40px;
-          height: 40px;
+          width: 20px;
+          height: 20px;
           margin: 10px;
         }
         .sidebar-label:hover {
@@ -28,10 +28,6 @@ export default function SideBarButton({
         }
 
         @media only screen and (max-width: 768px) {
-          .sidebar-label {
-            width: 20px;
-            height: 20px;
-          }
         }
         @media only screen and (max-width: 375px) {
           .sidebar-label {
