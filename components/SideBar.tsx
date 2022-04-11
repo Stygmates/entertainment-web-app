@@ -44,7 +44,7 @@ const SideBar = () => (
         /*Tablet*/
         @media only screen and (max-width: 768px) {
           .sidebar {
-            height: 96px;
+            height: 72px;
             width: 80%;
             flex-direction: row;
           }
@@ -55,6 +55,7 @@ const SideBar = () => (
         /*Mobile*/
         @media only screen and (max-width: 375px) {
           .sidebar {
+            height: 56px;
           }
         }
       `}
