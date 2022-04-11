@@ -21,12 +21,7 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
   return (
     <div className="trending-tile">
       <div className="tile-thumbnail">
-        <Image
-          src={thumbnailSource}
-          alt="Vercel Logo"
-          width={470}
-          height={230}
-        />
+        <Image src={thumbnailSource} alt="Vercel Logo" layout="fill" />
       </div>
       <div className="play-button">
         <PlayButton />
@@ -81,6 +76,11 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
           left: 50%;
           transform: translate(-50%, -50%);
         }
+        @media only screen and (max-width: 375px) {
+          .trending-tile {
+            width: 240px;
+            height: 140px;
+          }
       `}</style>
     </div>
   );
