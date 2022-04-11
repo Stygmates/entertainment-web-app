@@ -9,8 +9,8 @@ import SideBarAvatarButton from "./SideBarAvatarButton";
 
 const SideBar = () => (
   <div className="sidebar">
-    <div id="main-logo">
-      <Image className="icon" src={logo} alt="Vercel Logo" />
+    <div className="logo">
+      <SideBarButton src={logo} alt="Logo" />
     </div>
     <div className="sidebar-radiogroup">
       <SideBarButton src={iconNavHome} alt="Home" />
@@ -33,10 +33,11 @@ const SideBar = () => (
           margin: 32px;
         }
         .sidebar div {
-          margin: 20px;
+          margin: 10px;
         }
 
-        .sidebar-radiogroup {
+        .sidebar-radiogroup,
+        .logo {
           display: flex;
           flex-direction: column;
         }
