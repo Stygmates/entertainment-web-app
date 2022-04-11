@@ -3,9 +3,9 @@ import iconNavHome from "../assets/icon-nav-home.svg";
 import iconNavMovies from "../assets/icon-nav-movies.svg";
 import iconNavTVSeries from "../assets/icon-nav-tv-series.svg";
 import iconNavBookmark from "../assets/icon-nav-bookmark.svg";
-import iconAvatar from "../assets/image-avatar.png";
-import Image from "next/image";
 import SideBarButton from "./SideBarButton";
+import Image from "next/image";
+import SideBarAvatarButton from "./SideBarAvatarButton";
 
 const SideBar = () => (
   <div className="sidebar">
@@ -18,12 +18,7 @@ const SideBar = () => (
       <SideBarButton src={iconNavTVSeries} alt="TV" />
       <SideBarButton src={iconNavBookmark} alt="Bookmarked" />
     </div>
-
-    <div className="avatar-icon">
-      <button>
-        <Image src={iconAvatar} alt="Avatar" />
-      </button>
-    </div>
+    <SideBarAvatarButton />
     <style jsx>
       {`
         .sidebar {
@@ -46,10 +41,6 @@ const SideBar = () => (
           flex-direction: column;
         }
 
-        .avatar-icon button {
-          background-color: transparent;
-          border: none;
-        }
         /*Tablet*/
         @media only screen and (max-width: 768px) {
           .sidebar {
