@@ -3,10 +3,13 @@ import RecommendedTile from "./RecommendedTile";
 import { Tile, TileGroup } from "./Tile";
 function RecommendedTileGroup({ tiles }: TileGroup) {
   return (
-    <div className="recommended-tile-group">
-      {tiles.map((tile: Tile, index: number) => {
-        return <RecommendedTile key={index} tile={tile} />;
-      })}
+    <div>
+      <div className="heading-l">Recommended for you</div>
+      <div className="recommended-tile-group">
+        {tiles.map((tile: Tile, index: number) => {
+          return <RecommendedTile key={index} tile={tile} />;
+        })}
+      </div>
       <style jsx>{`
         .recommended-tile-group {
           display: flex;

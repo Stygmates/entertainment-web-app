@@ -9,18 +9,21 @@ export default function TrendingTileGroup({ tiles }: TileGroup) {
   const { disableScroll, enableScroll } = usePreventBodyScroll();
   let trendingTiles = tiles.filter((tile) => tile.isTrending);
   return (
-    <div onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
-      <ScrollMenu
-        onWheel={onWheel}
-        transitionBehavior="smooth"
-        transitionDuration={1500}
-      >
-        {trendingTiles.map(function (tile: Tile, index: number) {
-          return (
-            <TrendingTile key={index} tile={tile} itemId={index.toString()} />
-          );
-        })}
-      </ScrollMenu>
+    <div>
+      <div className="heading-l">Trending</div>
+      <div onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
+        <ScrollMenu
+          onWheel={onWheel}
+          transitionBehavior="smooth"
+          transitionDuration={1500}
+        >
+          {trendingTiles.map(function (tile: Tile, index: number) {
+            return (
+              <TrendingTile key={index} tile={tile} itemId={index.toString()} />
+            );
+          })}
+        </ScrollMenu>
+      </div>
     </div>
   );
 }
