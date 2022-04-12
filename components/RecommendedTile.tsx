@@ -32,12 +32,13 @@ function RecommendedTile(props: any) {
           {props.tile.year} • {videoType} {props.tile.category} •{" "}
           {props.tile.rating}
         </div>
-        <div className="heading-xs">{props.tile.title}</div>
+        <div className="heading-xs title">{props.tile.title}</div>
       </div>
       <style jsx>{`
         .recommended-tile {
           display: inline-block;
           margin: 5px;
+          width: 280px;
           height: 226px;
           position: relative;
           color: white;
@@ -77,10 +78,37 @@ function RecommendedTile(props: any) {
           left: 50%;
           transform: translate(-50%, -50%);
         }
-        @media only screen and (max-width: 376px) {
+        @media only screen and (max-width: 768px) {
+          .recommended-tile {
+            height: 192px;
+            width: 220px;
+          }
+
+          .tile-thumbnail {
+            width: 220px;
+            height: 140px;
+          }
+        }
+
+        @media only screen and (max-width: 375px) {
+          .recommended-tile {
+            width: 164px;
+            height: 154px;
+          }
           .tile-thumbnail {
             width: 164px;
             height: 110px;
+          }
+          .tile-description {
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 14px;
+          }
+
+          .title {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
           }
         }
       `}</style>
