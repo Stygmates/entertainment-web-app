@@ -18,12 +18,7 @@ function RecommendedTile(props: any) {
     <div className="recommended-tile">
       <div className="tile-thumbnail-group">
         <div className="tile-thumbnail">
-          <Image
-            src={thumbnailSource}
-            alt="Vercel Logo"
-            width={280}
-            height={174}
-          />
+          <Image src={thumbnailSource} alt="Vercel Logo" layout="fill" />
         </div>
         <div className="play-button">
           <PlayButton />
@@ -42,15 +37,16 @@ function RecommendedTile(props: any) {
       <style jsx>{`
         .recommended-tile {
           display: inline-block;
-          margin: 10px;
-          width: 280px;
+          margin: 5px;
           height: 226px;
           position: relative;
           color: white;
         }
 
         .tile-thumbnail {
+          position: relative;
           height: 174px;
+          width: 280px;
           /*To get rounded corner: */
           overflow: hidden;
           border-radius: 10px;
@@ -80,6 +76,12 @@ function RecommendedTile(props: any) {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+        @media only screen and (max-width: 376px) {
+          .tile-thumbnail {
+            width: 164px;
+            height: 110px;
+          }
         }
       `}</style>
     </div>

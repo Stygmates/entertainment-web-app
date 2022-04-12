@@ -21,12 +21,7 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
   return (
     <div className="trending-tile">
       <div className="tile-thumbnail">
-        <Image
-          src={thumbnailSource}
-          alt="Vercel Logo"
-          width="470"
-          height="230"
-        />
+        <Image src={thumbnailSource} alt="Vercel Logo" layout="fill" />
       </div>
       <div className="play-button">
         <PlayButton />
@@ -44,12 +39,17 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
         .trending-tile {
           display: inline-block;
           margin: 10px;
+
+          position: relative;
+          color: white;
+          /*To get rounded corner: */
+
+        }
+
+        .tile-thumbnail {
           width: 470px;
           height: 230px;
           position: relative;
-          color: white;
-
-          /*To get rounded corner: */
           overflow: hidden;
           border-radius: 10px;
         }
