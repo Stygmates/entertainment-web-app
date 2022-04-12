@@ -10,7 +10,7 @@ export default function SideBarButton({
   return (
     <label className="sidebar-label">
       <input type="radio" name="navbar" value="small" />
-      <Image src={src} alt={alt} width="100%" height="100%" />
+      <Image src={src} alt={alt} layout="fill" />
       <style jsx>{`
         input {
           position: absolute;
@@ -22,6 +22,7 @@ export default function SideBarButton({
           width: 20px;
           height: 20px;
           margin: 10px;
+          position: relative;
         }
         .sidebar-label:hover {
           filter: brightness(150%);

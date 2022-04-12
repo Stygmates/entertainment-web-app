@@ -28,6 +28,7 @@ const SideBar = () => (
           justify-content: space-between;
           background-color: var(--custom-middle-blue);
           color: white;
+          width: 96px;
           height: 90vh;
           border-radius: 20px;
           margin: 32px;
