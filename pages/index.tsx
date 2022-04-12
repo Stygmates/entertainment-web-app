@@ -21,7 +21,7 @@ const MainPage: NextPage = () => {
           display: flex;
         }
         .content {
-          width: 95%;
+          width: 90%;
         }
         @media only screen and (max-width: 768px) {
           .index-page {
