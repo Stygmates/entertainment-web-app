@@ -21,7 +21,12 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
   return (
     <div className="trending-tile">
       <div className="tile-thumbnail">
-        <Image src={thumbnailSource} alt="Vercel Logo" layout="fill" />
+        <Image
+          src={thumbnailSource}
+          alt="Vercel Logo"
+          width="470"
+          height="230"
+        />
       </div>
       <div className="play-button">
         <PlayButton />
