@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import { Tile, TileGroup } from "../components/Tile";
 import SearchBar from "../components/SearchBar";
 import TrendingTileGroup from "../components/TrendingTileGroup";
-import RecommendedTileGroup from "../components/RecommendedTileGroup";
+import RegularTileGroup from "../components/RegularTileGroup";
 import data from "../assets/data.json";
 import { Provider } from "react-redux";
 import { store } from "../app/store";
@@ -17,7 +17,7 @@ const MainPage: NextPage = () => {
         <div className="content">
           <SearchBar />
           <TrendingTileGroup tiles={tiles} />
-          <RecommendedTileGroup tiles={tiles} />
+          <RegularTileGroup tiles={tiles} />
         </div>
         <style jsx>{`
           .index-page {

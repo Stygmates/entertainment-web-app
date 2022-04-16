@@ -3,17 +3,18 @@ import BookmarkButton from "./BookmarkButton";
 import PlayButton from "./PlayButton";
 import movieIcon from "../assets/icon-category-movie.svg";
 import tvIcon from "../assets/icon-category-tv.svg";
+import { Tile } from "./Tile";
 
-function RecommendedTile(props: any) {
+function RegularTile({ tile }: { tile: Tile }) {
   let videoType;
-  if (props.tile.category === "Movie") {
+  if (tile.category === "Movie") {
     videoType = (
       <Image src={movieIcon} alt="Categorie" width={12} height={12} />
     );
-  } else if (props.tile.category === "TV Series") {
+  } else if (tile.category === "TV Series") {
     videoType = <Image src={tvIcon} alt="Categorie" width={12} height={12} />;
   }
-  let thumbnailSource = props.tile.thumbnail.regular.large.substring(1);
+  let thumbnailSource = tile.thumbnail.regular.large.substring(1);
   return (
     <div className="recommended-tile">
       <div className="tile-thumbnail-group">
@@ -24,20 +25,19 @@ function RecommendedTile(props: any) {
           <PlayButton />
         </div>
         <div className="bookmark-button">
-          <BookmarkButton bookmarked={props.tile.isBookmarked} />
+          <BookmarkButton bookmarked={tile.isBookmarked} />
         </div>
       </div>
       <div id="tile-information">
         <div id="tile-description" className="body-s">
-          {props.tile.year} • {videoType} {props.tile.category} •{" "}
-          {props.tile.rating}
+          {tile.year} • {videoType} {tile.category} • {tile.rating}
         </div>
-        <div className="heading-xs title">{props.tile.title}</div>
+        <div className="heading-xs title">{tile.title}</div>
       </div>
       <style jsx>{`
         .recommended-tile {
           display: inline-block;
-          margin: 5px;
+          margin: 15px;
           width: 280px;
           height: 226px;
           position: relative;
@@ -115,4 +115,4 @@ function RecommendedTile(props: any) {
     </div>
   );
 }
-export default RecommendedTile;
+export default RegularTile;

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectActiveTab } from "../features/activeTab/ActiveTabSlice";
-import PureRecommendedTileGroup from "./PureRecommendedTileGroup";
+import PureRegularTileGroup from "./PureRegularTileGroup";
 import { TileGroup } from "./Tile";
 
 type Props = {
@@ -8,5 +8,7 @@ type Props = {
 };
 export default function RecommendedTileGroup({ tiles }: Props) {
   const activeTab = useSelector(selectActiveTab);
-  return <PureRecommendedTileGroup tiles={tiles} activeTab={activeTab} />;
+  return (
+    <PureRegularTileGroup tiles={tiles} activeTab={activeTab} title={""} />
+  );
 }

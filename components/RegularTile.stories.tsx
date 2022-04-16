@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import BeyondEarth from "../public/thumbnails/beyond-earth/trending/large.jpg";
-import RecommendedTile from "./RecommendedTile";
+import RegularTile from "./RegularTile";
 import { Tile } from "./Tile";
 
 export default {
-  title: "Home/RecommendedTile",
-  component: RecommendedTile,
-} as ComponentMeta<typeof RecommendedTile>;
+  title: "Home/RegularTile",
+  component: RegularTile,
+} as ComponentMeta<typeof RegularTile>;
 
-const Template: ComponentStory<typeof RecommendedTile> = (args) => (
-  <RecommendedTile {...args} />
+const Template: ComponentStory<typeof RegularTile> = (args) => (
+  <RegularTile {...args} />
 );
 
 export const Primary = Template.bind({});
