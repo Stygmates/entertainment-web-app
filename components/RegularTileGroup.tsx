@@ -6,9 +6,7 @@ import { TileGroup } from "./Tile";
 type Props = {
   tiles: TileGroup;
 };
-export default function RecommendedTileGroup({ tiles }: Props) {
+export default function RegularTileGroup({ tiles }: Props) {
   const activeTab = useSelector(selectActiveTab);
-  return (
-    <PureRegularTileGroup tiles={tiles} activeTab={activeTab} title={""} />
-  );
+  return <PureRegularTileGroup tiles={tiles} activeTab={activeTab} />;
 }

@@ -37,11 +37,9 @@ export function RegularSectionTileGroup({
 }
 
 function PureRegularTileGroup({
-  title,
   tiles,
   activeTab,
 }: {
-  title: string;
   tiles: TileGroup;
   activeTab: string | null;
 }) {
