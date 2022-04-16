@@ -1,4 +1,9 @@
 import Image from "next/image";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectActiveTab,
+  setActiveTab,
+} from "../features/activeTab/ActiveTabSlice";
 
 export default function SideBarButton({
   src,
@@ -7,24 +12,29 @@ export default function SideBarButton({
   src: string;
   alt: string;
 }) {
+  const activeTab = useSelector(selectActiveTab);
+  const dispatch = useDispatch();
   return (
-    <label className="sidebar-label">
-      <input type="radio" name="navbar" value="small" />
+    <button
+      className={activeTab === alt ? "active" : ""}
+      onClick={() => {
+        dispatch(setActiveTab(alt));
+      }}
+    >
       <Image src={src} alt={alt} layout="fill" />
       <style jsx>{`
-        input {
-          position: absolute;
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-        .sidebar-label {
+        button {
           width: 20px;
           height: 20px;
           margin: 10px;
           position: relative;
+          background-color: transparent;
+          border: none;
         }
-        .sidebar-label:hover {
+        .active {
+          filter: brightness(0) invert(1);
+        }
+        button:hover {
           filter: brightness(150%);
         }
 
@@ -37,6 +47,6 @@ export default function SideBarButton({
           }
         }
       `}</style>
-    </label>
+    </button>
   );
 }
