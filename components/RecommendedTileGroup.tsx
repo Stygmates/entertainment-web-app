@@ -1,23 +1,12 @@
-import { ReactChild, ReactFragment, ReactPortal } from "react";
-import RecommendedTile from "./RecommendedTile";
-import { Tile, TileGroup } from "./Tile";
-function RecommendedTileGroup({ tiles }: TileGroup) {
-  return (
-    <div>
-      <div className="heading-l">Recommended for you</div>
-      <div className="recommended-tile-group">
-        {tiles.map((tile: Tile, index: number) => {
-          return <RecommendedTile key={index} tile={tile} />;
-        })}
-      </div>
-      <style jsx>{`
-        .recommended-tile-group {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      `}</style>
-    </div>
-  );
+import { useSelector } from "react-redux";
+import { selectActiveTab } from "../features/activeTab/ActiveTabSlice";
+import PureRecommendedTileGroup from "./PureRecommendedTileGroup";
+import { TileGroup } from "./Tile";
+
+type Props = {
+  tiles: TileGroup;
+};
+export default function RecommendedTileGroup({ tiles }: Props) {
+  const activeTab = useSelector(selectActiveTab);
+  return <PureRecommendedTileGroup tiles={tiles} activeTab={activeTab} />;
 }
-export default RecommendedTileGroup;

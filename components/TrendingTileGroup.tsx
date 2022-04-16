@@ -5,9 +5,9 @@ import TrendingTile from "./TrendingTile";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
-export default function TrendingTileGroup({ tiles }: TileGroup) {
+export default function TrendingTileGroup({ tiles }: { tiles: TileGroup }) {
   const { disableScroll, enableScroll } = usePreventBodyScroll();
-  let trendingTiles = tiles.filter((tile) => tile.isTrending);
+  let trendingTiles = tiles.filter((tile: Tile) => tile.isTrending);
   return (
     <div>
       <div className="heading-l">Trending</div>

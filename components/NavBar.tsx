@@ -14,7 +14,7 @@ export default function NavBar() {
       <div className="navbar-radiogroup">
         <NavBarButton src={iconNavHome} alt="Home" />
         <NavBarButton src={iconNavMovies} alt="Movie" />
-        <NavBarButton src={iconNavTVSeries} alt="TV" />
+        <NavBarButton src={iconNavTVSeries} alt="TV Series" />
         <NavBarButton src={iconNavBookmark} alt="Bookmarked" />
       </div>
       <NavBarAvatarButton />

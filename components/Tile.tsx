@@ -11,6 +11,4 @@ export interface Tile {
   isTrending: boolean;
 }
 
-export interface TileGroup {
-  tiles: Tile[];
-}
+export type TileGroup = Tile[];
