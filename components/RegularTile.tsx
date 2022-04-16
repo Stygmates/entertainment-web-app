@@ -43,6 +43,9 @@ function RegularTile({ tile }: { tile: Tile }) {
           position: relative;
           color: white;
         }
+        #tile-description {
+          margin: 5px 0;
+        }
 
         .tile-thumbnail {
           position: relative;
