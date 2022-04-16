@@ -1,6 +1,29 @@
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
 import IconSearch from "../assets/icon-search.svg";
-function SearchBar(props: any) {
+import { selectActiveTab } from "../features/activeTab/ActiveTabSlice";
+import { setSearchBar } from "../features/searchBar/SearchBarSlice";
+
+function get_placeholder(activeTab: string | null) {
+  switch (activeTab) {
+    case "Movie":
+      return "Search for movies";
+    case "TV Series":
+      return "Search for TV series";
+    case "Bookmarked":
+      return "Search for bookmarked shows";
+    default:
+      return "Search for movies or TV series";
+  }
+}
+export default function SearchBar() {
+  const activeTab = useSelector(selectActiveTab);
+  return <PureSearchBar placeholder={get_placeholder(activeTab)} />;
+}
+
+type Props = { placeholder: string };
+function PureSearchBar({ placeholder }: Props) {
+  const dispatch = useDispatch();
   return (
     <div className="searchbar">
       <label>
@@ -15,7 +38,10 @@ function SearchBar(props: any) {
       <input
         className="heading-m"
         type="text"
-        placeholder="Search for movies or TV series"
+        placeholder={placeholder}
+        onChange={(event) => {
+          dispatch(setSearchBar(event.target.value));
+        }}
       />
       <style jsx>
         {`
@@ -51,4 +77,3 @@ function SearchBar(props: any) {
     </div>
   );
 }
-export default SearchBar;

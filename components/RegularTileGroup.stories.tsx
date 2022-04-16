@@ -13,6 +13,9 @@ export default {
       options: [null, "Home", "Movie", "TV Series", "Bookmarked"],
       control: { type: "radio" },
     },
+    searchBarValue: {
+      control: "text",
+    },
   },
 } as ComponentMeta<typeof RegularTileGroup>;
 const Template: ComponentStory<typeof RegularTileGroup> = (args) => (
