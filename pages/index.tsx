@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import SideBar from "../components/SideBar";
+import NavBar from "../components/NavBar";
 import { Tile, TileGroup } from "../components/Tile";
 import SearchBar from "../components/SearchBar";
 import TrendingTileGroup from "../components/TrendingTileGroup";
@@ -13,7 +13,7 @@ const MainPage: NextPage = () => {
   return (
     <Provider store={store}>
       <div className="index-page">
-        <SideBar />
+        <NavBar />
         <div className="content">
           <SearchBar />
           <TrendingTileGroup tiles={tiles} />

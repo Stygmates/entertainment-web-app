@@ -5,22 +5,19 @@ import {
   setActiveTab,
 } from "../features/activeTab/ActiveTabSlice";
 
-export default function SideBarButton({
+export default function PureNavBarButton({
   src,
   alt,
+  activeTab,
+  onClick,
 }: {
   src: string;
   alt: string;
+  activeTab: string | null;
+  onClick: () => void;
 }) {
-  const activeTab = useSelector(selectActiveTab);
-  const dispatch = useDispatch();
   return (
-    <button
-      className={activeTab === alt ? "active" : ""}
-      onClick={() => {
-        dispatch(setActiveTab(alt));
-      }}
-    >
+    <button className={activeTab === alt ? "active" : ""} onClick={onClick}>
       <Image src={src} alt={alt} layout="fill" />
       <style jsx>{`
         button {
@@ -41,10 +38,6 @@ export default function SideBarButton({
         @media only screen and (max-width: 768px) {
         }
         @media only screen and (max-width: 375px) {
-          .sidebar-label {
-            width: 16px;
-            height: 16px;
-          }
         }
       `}</style>
     </button>

@@ -3,24 +3,24 @@ import iconNavHome from "../assets/icon-nav-home.svg";
 import iconNavMovies from "../assets/icon-nav-movies.svg";
 import iconNavTVSeries from "../assets/icon-nav-tv-series.svg";
 import iconNavBookmark from "../assets/icon-nav-bookmark.svg";
-import SideBarButton from "./SideBarButton";
-import SideBarAvatarButton from "./SideBarAvatarButton";
-export default function SideBar() {
+import NavBarButton from "./NavBarButton";
+import NavBarAvatarButton from "./NavBarAvatarButton";
+export default function NavBar() {
   return (
-    <div className="sidebar">
+    <div className="navbar">
       <div className="logo">
-        <SideBarButton src={logo} alt="Logo" />
+        <NavBarButton src={logo} alt="Logo" />
       </div>
-      <div className="sidebar-radiogroup">
-        <SideBarButton src={iconNavHome} alt="Home" />
-        <SideBarButton src={iconNavMovies} alt="Movie" />
-        <SideBarButton src={iconNavTVSeries} alt="TV" />
-        <SideBarButton src={iconNavBookmark} alt="Bookmarked" />
+      <div className="navbar-radiogroup">
+        <NavBarButton src={iconNavHome} alt="Home" />
+        <NavBarButton src={iconNavMovies} alt="Movie" />
+        <NavBarButton src={iconNavTVSeries} alt="TV" />
+        <NavBarButton src={iconNavBookmark} alt="Bookmarked" />
       </div>
-      <SideBarAvatarButton />
+      <NavBarAvatarButton />
       <style jsx>
         {`
-          .sidebar {
+          .navbar {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,11 +32,11 @@ export default function SideBar() {
             border-radius: 20px;
             margin: 32px;
           }
-          .sidebar div {
+          .navbar div {
             margin: 10px;
           }
 
-          .sidebar-radiogroup,
+          .navbar-radiogroup,
           .logo {
             display: flex;
             flex-direction: column;
@@ -44,18 +44,18 @@ export default function SideBar() {
 
           /*Tablet*/
           @media only screen and (max-width: 768px) {
-            .sidebar {
+            .navbar {
               height: 72px;
               width: 80%;
               flex-direction: row;
             }
-            .sidebar-radiogroup {
+            .navbar-radiogroup {
               flex-direction: row;
             }
           }
           /*Mobile*/
           @media only screen and (max-width: 375px) {
-            .sidebar {
+            .navbar {
               height: 56px;
               width: 100vw;
               border-radius: 0px;

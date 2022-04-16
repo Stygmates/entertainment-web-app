@@ -1,7 +1,7 @@
 import Image from "next/image";
 import iconAvatar from "../assets/image-avatar.png";
 
-export default function SideBarAvatarButton() {
+export default function NavBarAvatarButton() {
   return (
     <div className="avatar-icon">
       <button>
