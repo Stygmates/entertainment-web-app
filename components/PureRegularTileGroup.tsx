@@ -18,12 +18,11 @@ export function RegularSectionTileGroup({
         )
       : tiles.filter((tile: Tile) => tile.category === category);
   let title = category;
+  if (category === "Movie") {
+    title = "Movies";
+  }
   if (activeTab === "Bookmarked") {
-    if (category === "Movie") {
-      title = "Bookmarked Movies";
-    } else {
-      title = "Bookmarked " + category;
-    }
+    title = "Bookmarked " + title;
   }
   return (
     <>
