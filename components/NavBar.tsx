@@ -5,13 +5,14 @@ import iconNavTVSeries from "../assets/icon-nav-tv-series.svg";
 import iconNavBookmark from "../assets/icon-nav-bookmark.svg";
 import NavBarButton from "./NavBarButton";
 import NavBarAvatarButton from "./NavBarAvatarButton";
+import Image from "next/image";
 
 type Props = {};
 export default function NavBar({}: Props) {
   return (
     <div className="navbar">
       <div className="logo">
-        <NavBarButton src={logo} alt="Logo" />
+        <Image src={logo} alt="Logo" layout="fill" />
       </div>
       <div className="navbar-radiogroup">
         <NavBarButton src={iconNavHome} alt="Home" />
@@ -34,14 +35,18 @@ export default function NavBar({}: Props) {
             border-radius: 20px;
             margin: 32px;
           }
-          .navbar div {
-            margin: 10px;
-          }
 
           .navbar-radiogroup,
           .logo {
             display: flex;
             flex-direction: column;
+          }
+
+          .logo {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin: 20px;
           }
 
           /*Tablet*/
