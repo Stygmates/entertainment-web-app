@@ -19,7 +19,6 @@ export const TilesSlice = createSlice({
       state.value = action.payload;
     },
     toggleBookmark: (state, action: PayloadAction<string>) => {
-      console.log(action.payload);
       if (state.value != null) {
         state.value = state.value.map((tile: Tile) => {
           if (tile.title === action.payload) {
