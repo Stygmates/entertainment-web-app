@@ -1,17 +1,17 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import TrendingTileGroup from "./TrendingTileGroup";
+import PureTrendingTileGroup from "./TrendingTileGroup";
 import { Provider } from "react-redux";
 import { store } from "../app/store";
 
 export default {
   title: "Home/TrendingTileGroup",
-  component: TrendingTileGroup,
-} as ComponentMeta<typeof TrendingTileGroup>;
+  component: PureTrendingTileGroup,
+} as ComponentMeta<typeof PureTrendingTileGroup>;
 
-const Template: ComponentStory<typeof TrendingTileGroup> = (args) => (
+const Template: ComponentStory<typeof PureTrendingTileGroup> = (args) => (
   <Provider store={store}>
-    <TrendingTileGroup {...args} />
+    <PureTrendingTileGroup {...args} />
   </Provider>
 );
 
