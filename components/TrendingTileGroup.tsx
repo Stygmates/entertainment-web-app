@@ -49,7 +49,9 @@ export function PureTrendingTileGroup({
           transitionDuration={1500}
         >
           {trendingTiles.map(function (tile: Tile, index: number) {
-            return <TrendingTile key={index} tile={tile} />;
+            return (
+              <TrendingTile key={index} tile={tile} itemId={index.toString()} />
+            );
           })}
         </ScrollMenu>
       </div>

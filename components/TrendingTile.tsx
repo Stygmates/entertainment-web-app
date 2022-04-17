@@ -7,7 +7,8 @@ import { Tile } from "./Tile";
 import { useDispatch } from "react-redux";
 import { toggleBookmark } from "../features/tiles/TilesSlice";
 
-function TrendingTile({ tile }: { tile: Tile }) {
+/// itemId is necessary for the horizontal scrolling, do not remove
+function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
   const dispatch = useDispatch();
   let videoType;
   if (tile.category === "Movie") {
