@@ -2,8 +2,11 @@ import Image from "next/image";
 import IconBookmarkEmpty from "../assets/icon-bookmark-empty.svg";
 import IconBookmarkFull from "../assets/icon-bookmark-full.svg";
 
-function BookmarkButton(props: any) {
-  let icon = props.bookmarked ? IconBookmarkFull : IconBookmarkEmpty;
+type Props = {
+  bookmarked: boolean;
+};
+export default function BookmarkButton({ bookmarked }: Props) {
+  let icon = bookmarked ? IconBookmarkFull : IconBookmarkEmpty;
   return (
     <button>
       <Image src={icon} alt="Bookmark" width={16} height={16} />
@@ -23,4 +26,3 @@ function BookmarkButton(props: any) {
     </button>
   );
 }
-export default BookmarkButton;

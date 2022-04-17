@@ -47,17 +47,19 @@ function get_title(
     return title;
   }
 }
+
+type Props = {
+  tiles: TileGroup;
+  activeTab: string | null;
+  category: string | null;
+  searchBarValue: string | null;
+};
 export function RegularSectionTileGroup({
   tiles,
   activeTab,
   category,
   searchBarValue,
-}: {
-  tiles: TileGroup;
-  activeTab: string | null;
-  category: string | null;
-  searchBarValue: string | null;
-}) {
+}: Props) {
   let tiles_to_display = get_tiles_to_display(
     tiles,
     category,
@@ -77,17 +79,19 @@ export function RegularSectionTileGroup({
   );
 }
 
-function PureRegularTileGroup({
+type PureProps = {
+  tiles: TileGroup;
+  activeTab: string | null;
+  category: string | null;
+  searchBarValue: string | null;
+};
+export default function PureRegularTileGroup({
   tiles,
   activeTab,
   searchBarValue,
-}: {
-  tiles: TileGroup | null;
-  activeTab: string | null;
-  searchBarValue: string | null;
-}) {
+}: PureProps) {
   if (tiles === null) {
-    return <div className="heading-l"> No tile to display</div>
+    return <div className="heading-l"> No tile to display</div>;
   }
   if (activeTab === "Bookmarked") {
     return (
@@ -117,4 +121,3 @@ function PureRegularTileGroup({
     );
   }
 }
-export default PureRegularTileGroup;

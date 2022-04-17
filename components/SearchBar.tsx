@@ -16,13 +16,15 @@ function get_placeholder(activeTab: string | null) {
       return "Search for movies or TV series";
   }
 }
-export default function SearchBar() {
+
+type Props = {};
+export default function SearchBar({}: Props) {
   const activeTab = useSelector(selectActiveTab);
   return <PureSearchBar placeholder={get_placeholder(activeTab)} />;
 }
 
-type Props = { placeholder: string };
-function PureSearchBar({ placeholder }: Props) {
+type PureProps = { placeholder: string };
+function PureSearchBar({ placeholder }: PureProps) {
   const dispatch = useDispatch();
   return (
     <div className="searchbar">

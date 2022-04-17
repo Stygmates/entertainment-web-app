@@ -5,7 +5,9 @@ import iconNavTVSeries from "../assets/icon-nav-tv-series.svg";
 import iconNavBookmark from "../assets/icon-nav-bookmark.svg";
 import NavBarButton from "./NavBarButton";
 import NavBarAvatarButton from "./NavBarAvatarButton";
-export default function NavBar() {
+
+type Props = {};
+export default function NavBar({}: Props) {
   return (
     <div className="navbar">
       <div className="logo">

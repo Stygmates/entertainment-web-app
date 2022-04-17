@@ -5,17 +5,19 @@ import {
   setActiveTab,
 } from "../features/activeTab/ActiveTabSlice";
 
+type Props = {
+  src: string;
+  alt: string;
+  activeTab: string | null;
+  onClick: () => void;
+};
+
 export default function PureNavBarButton({
   src,
   alt,
   activeTab,
   onClick,
-}: {
-  src: string;
-  alt: string;
-  activeTab: string | null;
-  onClick: () => void;
-}) {
+}: Props) {
   return (
     <button className={activeTab === alt ? "active" : ""} onClick={onClick}>
       <Image src={src} alt={alt} layout="fill" />

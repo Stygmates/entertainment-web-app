@@ -1,7 +1,9 @@
 import Image from "next/image";
 import IconPlay from "../assets/icon-play.svg";
 
-function PlayButton(props: any) {
+type Props = {};
+
+export default function PlayButton({}: Props) {
   return (
     <div className="play-button">
       <Image src={IconPlay} alt="Play" width={30} height={30} />
@@ -20,4 +22,3 @@ function PlayButton(props: any) {
     </div>
   );
 }
-export default PlayButton;

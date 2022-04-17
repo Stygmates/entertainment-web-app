@@ -7,7 +7,8 @@ import { Tile } from "./Tile";
 import { useDispatch } from "react-redux";
 import { toggleBookmark } from "../features/tiles/TilesSlice";
 
-function RegularTile({ tile }: { tile: Tile }) {
+type Props = { tile: Tile };
+export default function RegularTile({ tile }: Props) {
   const dispatch = useDispatch();
   let videoType;
   if (tile.category === "Movie") {
@@ -124,4 +125,3 @@ function RegularTile({ tile }: { tile: Tile }) {
     </div>
   );
 }
-export default RegularTile;

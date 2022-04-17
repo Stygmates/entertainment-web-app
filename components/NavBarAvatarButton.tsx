@@ -1,7 +1,8 @@
 import Image from "next/image";
 import iconAvatar from "../assets/image-avatar.png";
 
-export default function NavBarAvatarButton() {
+type Props = {};
+export default function NavBarAvatarButton({}: Props) {
   return (
     <div className="avatar-icon">
       <button>

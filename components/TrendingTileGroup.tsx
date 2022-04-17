@@ -22,15 +22,16 @@ export default function TrendingTileGroup({}: Props) {
   );
 }
 
+type PureProps = {
+  tiles: TileGroup | null;
+  searchBarValue: string | null;
+  activeTab: string | null;
+};
 export function PureTrendingTileGroup({
   tiles,
   searchBarValue,
   activeTab,
-}: {
-  tiles: TileGroup | null;
-  searchBarValue: string | null;
-  activeTab: string | null;
-}) {
+}: PureProps) {
   const { disableScroll, enableScroll } = usePreventBodyScroll();
   if (searchBarValue || activeTab == "Bookmarked") {
     return <></>;
