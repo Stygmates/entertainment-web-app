@@ -80,7 +80,7 @@ export function RegularSectionTileGroup({
 }
 
 type PureProps = {
-  tiles: TileGroup;
+  tiles: TileGroup | null;
   activeTab: string | null;
   category: string | null;
   searchBarValue: string | null;
