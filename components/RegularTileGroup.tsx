@@ -5,8 +5,7 @@ import { selectTiles } from "../features/tiles/TilesSlice";
 import PureRegularTileGroup from "./PureRegularTileGroup";
 import { TileGroup } from "./Tile";
 
-type Props = {
-};
+type Props = {};
 export default function RegularTileGroup({}: Props) {
   const tiles = useSelector(selectTiles);
   const activeTab = useSelector(selectActiveTab);
