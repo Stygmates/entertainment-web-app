@@ -27,7 +27,10 @@ function RegularTile({ tile }: { tile: Tile }) {
         <div className="play-button">
           <PlayButton />
         </div>
-        <div className="bookmark-button" onClick={() => dispatch(toggleBookmark(tile.title))}>
+        <div
+          className="bookmark-button"
+          onClick={() => dispatch(toggleBookmark(tile.title))}
+        >
           <BookmarkButton bookmarked={tile.isBookmarked} />
         </div>
       </div>

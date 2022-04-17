@@ -1,4 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Provider, useSelector } from "react-redux";
+import { store } from "../app/store";
+import { selectTiles } from "../features/tiles/TilesSlice";
 import TrendingTile from "./TrendingTile";
 
 export default {
@@ -7,7 +10,9 @@ export default {
 } as ComponentMeta<typeof TrendingTile>;
 
 const Template: ComponentStory<typeof TrendingTile> = (args) => (
-  <TrendingTile {...args} />
+  <Provider store={store}>
+    <TrendingTile {...args} />
+  </Provider>
 );
 
 export const Primary = Template.bind({});

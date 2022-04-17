@@ -7,7 +7,7 @@ import { Tile } from "./Tile";
 import { useDispatch } from "react-redux";
 import { toggleBookmark } from "../features/tiles/TilesSlice";
 
-function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
+function TrendingTile({ tile }: { tile: Tile }) {
   const dispatch = useDispatch();
   let videoType;
   if (tile.category === "Movie") {
@@ -29,7 +29,10 @@ function TrendingTile({ tile, itemId }: { tile: Tile; itemId: string }) {
       <div className="play-button">
         <PlayButton />
       </div>
-      <div className="bookmark-button" onClick={() => dispatch(toggleBookmark(tile.title))}>
+      <div
+        className="bookmark-button"
+        onClick={() => dispatch(toggleBookmark(tile.title))}
+      >
         <BookmarkButton bookmarked={tile.isBookmarked} />
       </div>
       <div id="tile-information">

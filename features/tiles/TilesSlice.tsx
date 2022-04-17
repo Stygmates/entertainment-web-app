@@ -22,13 +22,14 @@ export const TilesSlice = createSlice({
       console.log(action.payload);
       if (state.value != null) {
         state.value = state.value.map((tile: Tile) => {
-          if (tile.title === action.payload) { return { ...tile, isBookmarked: !tile.isBookmarked } }
-          else {
+          if (tile.title === action.payload) {
+            return { ...tile, isBookmarked: !tile.isBookmarked };
+          } else {
             return tile;
           }
         });
       }
-    }
+    },
   },
 });
 
