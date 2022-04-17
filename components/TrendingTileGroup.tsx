@@ -2,11 +2,24 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import usePreventBodyScroll from "./helpers/useProventBodyScroll";
 import { Tile, TileGroup } from "./Tile";
 import TrendingTile from "./TrendingTile";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectTiles,
+  setTiles,
+} from "../features/tiles/TilesSlice";
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
-export default function TrendingTileGroup({ tiles }: { tiles: TileGroup }) {
+export default function TrendingTileGroup() {
+  const tiles = useSelector(selectTiles);
+  const dispatch = useDispatch();
+  return <PureTrendingTileGroup tiles={tiles} />
+}
+
+export function PureTrendingTileGroup({ tiles }: { tiles: TileGroup | null }) {
   const { disableScroll, enableScroll } = usePreventBodyScroll();
+  if (tiles == null) {
+    return <div className="heading-l">Nothing to display</div>
+  }
   let trendingTiles = tiles.filter((tile: Tile) => tile.isTrending);
   return (
     <div>

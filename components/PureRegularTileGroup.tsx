@@ -82,10 +82,13 @@ function PureRegularTileGroup({
   activeTab,
   searchBarValue,
 }: {
-  tiles: TileGroup;
+  tiles: TileGroup | null;
   activeTab: string | null;
   searchBarValue: string | null;
 }) {
+  if (tiles === null) {
+    return <div className="heading-l"> No tile to display</div>
+  }
   if (activeTab === "Bookmarked") {
     return (
       <div>

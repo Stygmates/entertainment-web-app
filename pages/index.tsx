@@ -16,8 +16,8 @@ const MainPage: NextPage = () => {
         <NavBar />
         <div className="content">
           <SearchBar />
-          <TrendingTileGroup tiles={tiles} />
-          <RegularTileGroup tiles={tiles} />
+          <TrendingTileGroup />
+          <RegularTileGroup />
         </div>
         <style jsx>{`
           .index-page {
