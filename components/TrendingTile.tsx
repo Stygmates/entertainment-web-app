@@ -51,7 +51,6 @@ export default function TrendingTile({ tile, itemId }: Props) {
           position: relative;
           color: white;
           /*To get rounded corner: */
-
         }
 
         .tile-thumbnail {
@@ -90,10 +89,11 @@ export default function TrendingTile({ tile, itemId }: Props) {
           transform: translate(-50%, -50%);
         }
         @media only screen and (max-width: 375px) {
-          .trending-tile {
+          .tile-thumbnail {
             width: 240px;
             height: 140px;
           }
+        }
       `}</style>
     </div>
   );
