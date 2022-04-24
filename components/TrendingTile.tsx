@@ -38,7 +38,7 @@ export default function TrendingTile({ tile, itemId }: Props) {
         <BookmarkButton bookmarked={tile.isBookmarked} />
       </div>
       <div className="tile-information">
-        <div id="tile-description" className="body-m">
+        <div className="tile-description body-m">
           {tile.year} • {videoType} {tile.category} • {tile.rating}
         </div>
         <div className="heading-s">{tile.title}</div>
