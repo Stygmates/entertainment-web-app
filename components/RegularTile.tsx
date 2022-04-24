@@ -36,7 +36,7 @@ export default function RegularTile({ tile }: Props) {
         </div>
       </div>
       <div id="tile-information">
-        <div id="tile-description" className="body-s">
+        <div className="tile-description body-s">
           {tile.year} • {videoType} {tile.category} • {tile.rating}
         </div>
         <div className="heading-xs title">{tile.title}</div>
@@ -50,7 +50,7 @@ export default function RegularTile({ tile }: Props) {
           position: relative;
           color: white;
         }
-        #tile-description {
+        .tile-description {
           margin: 5px 0;
         }
 
