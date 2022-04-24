@@ -35,7 +35,7 @@ export default function RegularTile({ tile }: Props) {
           <BookmarkButton bookmarked={tile.isBookmarked} />
         </div>
       </div>
-      <div id="tile-information">
+      <div>
         <div className="tile-description body-s">
           {tile.year} • {videoType} {tile.category} • {tile.rating}
         </div>
