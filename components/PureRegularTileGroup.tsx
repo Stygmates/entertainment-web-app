@@ -70,10 +70,17 @@ export function RegularSectionTileGroup({
   return (
     <>
       <div className="heading-l">{title}</div>
-      <div>
+      <div className="regular-section-tile-group">
         {tiles_to_display.map((tile: Tile, index: number) => {
           return <RegularTile key={index} tile={tile} />;
         })}
+        <style jsx>{`
+          .regular-section-tile-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        `}</style>
       </div>
     </>
   );
